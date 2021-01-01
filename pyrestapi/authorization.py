@@ -1,4 +1,4 @@
-from werkzeug.exceptions import Unauthorized , NotFound
+from werkzeug.exceptions import Unauthorized, NotFound
 
 """
 Handle the authentication process
@@ -6,10 +6,10 @@ Handle the authentication process
 
 
 class Authorization(object):
-    def __init__(self,authentication):
+    def __init__(self, authentication):
         self.authentication = authentication
 
-    def check_auth(self,request):
+    def check_auth(self, request):
         """
         Return None if the request user is authorized to perform this
         action, raise Unauthorized otherwise
@@ -22,11 +22,11 @@ class Authorization(object):
             raise Unauthorized
 
 
-
 class Authentication(object):
     """
     Manage the authentication of a request. Must implement the get_user method
     """
+
     def get_user(self, identifier):
         """
         Must return a user if authentication is successfull, None otherwise
@@ -58,13 +58,12 @@ class ApiKeyAuthentication(Authentication):
         return None
 
 
-
-
 class BasicAuthentication(Authentication):
     """
     Implement the Basic Auth authentication
     http://wikipedia.org/wiki/HTTP_Authentification
     """
+
     def __init__(self, datastore):
         self.datastore = datastore
 
@@ -90,6 +89,3 @@ class ApiKeyAuthorization(Authorization):
     """
 
     pass
-
-
-

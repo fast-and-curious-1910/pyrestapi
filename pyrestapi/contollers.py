@@ -52,7 +52,7 @@ class WSGIWrapper(object):
         try:
             endpoint, values = adapter.match()
             return getattr(self, endpoint)(request, **values)
-        except HTTPException as  error:
+        except HTTPException as error:
             return self.view(
                 {"error": error.description},
                 status=error.code)

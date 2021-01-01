@@ -1,4 +1,4 @@
-from setuptools import setup , find_packages
+from setuptools import setup, find_packages
 
 
 setup(
@@ -11,7 +11,7 @@ setup(
     author='Palash Sureka',
     author_email='devpalash1910@gmail.com',
     packages=[
-        'pyrestapi','pyrestapi.models','pyrestapi.datastore'
+        'pyrestapi', 'pyrestapi.models', 'pyrestapi.datastore'
     ]
 
 )
